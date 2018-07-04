@@ -1,0 +1,24 @@
+.profile {
+    text-align: center;
+    display: flex;
+    padding: 5px;
+}
+
+.profile_img {
+    background: #D8D8D8;
+}
+
+.profile_img img {
+    padding: 10px;
+    border-radius: 45%;
+    height: 90px;
+    width: 90px;
+}
+
+.profile_text {
+    padding: 20px 0px 0px 0px;
+    background: #585858;
+    height: 100px;
+    width: 100%;
+}
+
