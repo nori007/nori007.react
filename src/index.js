@@ -1,12 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SimpleInfo from './component/SimpleInfo'
-import Search from './component/Search'
+import App from './App';
 
-ReactDOM.render(
-    <div>
-        <SimpleInfo />
-        <Search />        
-    </div>, 
-document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

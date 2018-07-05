@@ -1,30 +1,39 @@
-import React, {Componet} from 'react';
-import './ProjectItem';
+import React, {Component} from 'react';
+import './ProjectItem.css';
 
-export default class ProjectItem extends Componet {
+export default class ProjectItem extends Component {
     render () {
-        let ProjectInfo = this.props.ProjectInfo;
-
-        if(ProjectInfo) {
+        let item = this.props.item;
+        if(item) {
             return (
-                <div className='projectItem_top'>
-                    <div className='projectItem_title'>
-                        <p></p>
+                <div className='projectItem'>
+                    <div className='projectItem_top'>
+                        <div className='projectItem_name'>
+                            <p>{item.name}</p>
+                        </div>
+                        <div className='projectItem_date'>
+                            <p>{item.date}</p>
+                        </div>
                     </div>
-                    <div className='projectItem_dsate'>
-                        <p></p>
-                    </div>
+                    {/* <div className='projectItem_content'> */}
+                        <div className='projectItem_info'>
+                            <p>{item.info}</p>
+                        </div>
+                        <div className='projectItem_skill'>
+                            <p>{item.skill}</p>
+                        </div>
+                        <div className='projectItem_text'>
+                            <p>{item.text}</p>
+                        </div>
+                        <div className='projectItem_etc'>
+                            <p>{item.etc}</p>
+                        </div>
+                    {/* </div> */}
                 </div>
-                <div className='projectItem_introduction'>
-                    <p></p>
-                </div>
-                <div className='projectItem_my'>
-                    <p></p>
-                </div>
-
             )
         }else {
             return null;
         }
     }
 }
+
