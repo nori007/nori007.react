@@ -3,7 +3,7 @@ import './ProjectItem.css';
 
 export default class ProjectItem extends Component {
     render () {
-        let item = this.props.item;
+        let item = this.props.project;
         if(item) {
             return (
                 <div className='projectItem'>

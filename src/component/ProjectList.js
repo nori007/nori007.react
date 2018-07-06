@@ -4,15 +4,15 @@ import ProjectItem from './ProjectItem';
 
 export default class ProjectList extends Component {
 
-    createProjectList(item, indext) {
+    createProject(item, index) {
         return (
-            <li className='projectList_row' key={item.key}>
-                <ProjectItem projectInfo={item.projectInfo}/>
-            </li>
+            <div className='projectList_row' key={item.key}>
+                <ProjectItem project={item.project}/>
+            </div>
         )
     }
 
     render() {
-        return <ul> </ul>
+        return <div className='projectList'>{this.props.projectList.map(this.createProject)}</div>
     }
 }
