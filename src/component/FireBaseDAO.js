@@ -23,6 +23,11 @@ export default class FirebaseDao {
         return firebase.database().ref().update(updates);
     }
 
+    list(pagesize) {
+
+        return;
+    }
+
     remove(key) {
         return firebase.database().ref('/projectItem/').child(key).remove();
     }

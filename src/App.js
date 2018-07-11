@@ -19,28 +19,40 @@ class App extends Component {
         }
     }
 
-    getKeywordList() {
+    getKeywordList(target) {
         console.log('getKeywordList');
-        // 키워드 설정
-        //return undefined;
+        let list = dao.list(20);
+        let resList = [];
+
+        if(!(target == '' || target == 'undefined')) {
+            list.map((item) => {
+                item.keyword.map((keyword) => {
+                    if(keyword == target) {
+                        resList.push(item);
+                    }
+                })
+            });
+        }else {
+            resList = list;
+        }
+        return resList;
     }
 
     setKeyword(target) {
         var newList = [];
-        newList.push({key: 1, project: new Item()});
+        newList.push(new Item());
         // 키워드 설정
         // 리스트 새로
         return this.setState({
-            projectList: newList,
-            keywordList: ['keyword00']
+            projectList: getKeywordList(target),
+            keywordList: target
         });
-         
     }
 
     componentWillMount() {
-        this.state.projectList.push({key: 1, project: new Item()});
-        this.state.projectList.push({key: 2, project: new Item()});
-        this.state.projectList.push({key: 3, project: new Item()});
+        this.state.projectList.push(new Item());
+        this.state.projectList.push(new Item());
+        this.state.projectList.push(new Item());
         this.state.keywordList.push('keyword01');
         this.state.keywordList.push('keyword02');
         // 로딩후 진행.

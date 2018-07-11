@@ -11,8 +11,8 @@ export default class ProjectList extends Component {
 
     createProject(item, index) {
         return (
-            <div className='projectList_row' key={item.key}>
-                <ProjectItem project={item.project}/>
+            <div className='projectList_row' key={index}>
+                <ProjectItem project={item}/>
             </div>
         )
     }
