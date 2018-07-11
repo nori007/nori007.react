@@ -1,0 +1,16 @@
+.keywordList {
+    background-color: antiquewhite;
+    text-align: center;
+    margin: 5px;
+    padding: 10px 0 10px 0;
+}
+
+.keywordList_keyword {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    color: white;
+    background-color: #000;
+    border-radius: 3px;
+    border: 0px;
+}
