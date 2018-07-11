@@ -21,20 +21,20 @@ class App extends Component {
 
     getKeywordList(target) {
         console.log('getKeywordList');
-        let list = dao.list(20);
+        let list = this.dao.list(20);
         let resList = [];
 
-        if(!(target == '' || target == 'undefined')) {
-            list.map((item) => {
-                item.keyword.map((keyword) => {
-                    if(keyword == target) {
-                        resList.push(item);
-                    }
-                })
-            });
-        }else {
-            resList = list;
-        }
+        // if(!(target === '' || target === 'undefined')) {
+        //     list.map((item) => {
+        //         item.keyword.map((keyword) => {
+        //             if(keyword === target) {
+        //                 return resList.push(item);
+        //             }
+        //         })
+        //     });
+        // }else {
+        //     resList = list;
+        // }
         return resList;
     }
 
@@ -44,7 +44,7 @@ class App extends Component {
         // 키워드 설정
         // 리스트 새로
         return this.setState({
-            projectList: getKeywordList(target),
+            projectList: this.getKeywordList(target),
             keywordList: target
         });
     }
