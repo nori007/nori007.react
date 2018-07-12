@@ -14,7 +14,7 @@ export default class KeywordList extends Component {
 
     render() {
         return <div className='keywordList'>{this.props.keywordList.map((item, index)=>{
-            return <button className="keywordList_keyword" key={index} value={item} onClick={this.selectedKeyword}><span>{item}</span></button>
+            return <button className="keywordList_keyword" key={index} value={item} onClick={this.selectedKeyword}><span value={item}>{item}</span></button>
         })}</div>
     }
 }
