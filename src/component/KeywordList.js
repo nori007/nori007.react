@@ -9,13 +9,12 @@ export default class KeywordList extends Component {
     }
 
     selectedKeyword(event) {
-        console.log('selectedKeyword');
-        this.props.setKeyword('test');
+        this.props.setKeyword(event.target.value);
     }
 
     render() {
         return <div className='keywordList'>{this.props.keywordList.map((item, index)=>{
-            return <button className="keywordList_keyword" key={index} onClick={this.selectedKeyword}><span>{item}</span></button>
+            return <button className="keywordList_keyword" key={index} value={item} onClick={this.selectedKeyword}><span>{item}</span></button>
         })}</div>
     }
 }

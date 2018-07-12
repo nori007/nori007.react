@@ -4,7 +4,11 @@ import Config from '../config/FireBaseConfig'
 export default class FirebaseDao {
     
     constructor(){
-        firebase.initializeApp(Config);
+        if(firebase.apps && firebase.apps.length > 0) {
+            this.firebaseApp = firebase.apps[0];
+        } else {
+            this.firebaseApp = firebase.initializeApp(Config);
+        }
     } 
 
     newKey(){
@@ -24,8 +28,7 @@ export default class FirebaseDao {
     }
 
     list(pagesize) {
-
-        return;
+        return firebase.database().ref('/projectItem/').orderByKey();
     }
 
     remove(key) {

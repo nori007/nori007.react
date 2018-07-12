@@ -1,11 +1,12 @@
 const Item = () => {
     return ({
-        name: 'name01',
-        date: 'date01',
-        info: 'info01',
-        skill: 'skill01',
-        text: 'text01',
-        etc: 'etc01',
+        keyword: ['t1'],
+        name: 't1',
+        date: 't1',
+        info: 't1',
+        skill: 't1',
+        text: 't1',
+        etc: 't1',
     })
 }
 

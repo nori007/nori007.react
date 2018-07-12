@@ -10,12 +10,12 @@ export default class SimpleInfo extends Component {
                     <img src={profileImg} alt='profileImgage'/>
                 </div>
                 <div className="profile_text">
-                    한줄표현
+                    -
                     <br/>
                     <br/>
-                    키워드
+                    -
                     <br/>
-                    키워드2
+                    -
                 </div>
             </div>
         )

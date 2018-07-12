@@ -9,53 +9,70 @@ import KeywordList from './component/KeywordList'
 class App extends Component {
     
     constructor() {
+        console.log("constructor");
         super();
         this.dao = new FireBaseDAO();
-        this.getKeywordList = this.getKeywordList.bind(this);
+        this.getKeywordList = this.getTargetProjectList.bind(this);
         this.setKeyword = this.setKeyword.bind(this);
+        this.setKeywordList = this.setKeywordList.bind(this);
         this.state = {
             projectList: [],
             keywordList: []
         }
     }
 
-    getKeywordList(target) {
-        console.log('getKeywordList');
-        let list = this.dao.list(20);
+    getTargetProjectList(target) {
+        let pList = this.state.projectList;
         let resList = [];
+        
+        pList.forEach((item) => {
+            item.keyword.forEach((word) => {
+                if(word === target) {
+                    resList.push(item);
+                    return;
+                }
+            })
+        });
 
-        // if(!(target === '' || target === 'undefined')) {
-        //     list.map((item) => {
-        //         item.keyword.map((keyword) => {
-        //             if(keyword === target) {
-        //                 return resList.push(item);
-        //             }
-        //         })
-        //     });
-        // }else {
-        //     resList = list;
-        // }
         return resList;
     }
 
     setKeyword(target) {
-        var newList = [];
-        newList.push(new Item());
-        // 키워드 설정
-        // 리스트 새로
         return this.setState({
-            projectList: this.getKeywordList(target),
-            keywordList: target
+            projectList: this.getTargetProjectList(target),
+            keywordList: [target]
         });
     }
 
+    setKeywordList(itemList) {
+        let kList = [];
+
+        itemList.forEach((item) => {
+            item.keyword.forEach((keyword) => {
+                kList.push(keyword);
+            });
+        });
+
+        return kList.reduce((a, b) => { if(a.indexOf(b) < 0){ a.push(b); } return a;}, []);
+    }
+
     componentWillMount() {
-        this.state.projectList.push(new Item());
-        this.state.projectList.push(new Item());
-        this.state.projectList.push(new Item());
-        this.state.keywordList.push('keyword01');
-        this.state.keywordList.push('keyword02');
-        // 로딩후 진행.
+        this.dao.list(25).on('value', (dataList) => {    
+            let pList = [];
+            
+            dataList.forEach((data) => {
+                pList.push(data.val());
+            });
+
+            return this.setState({
+                projectList: pList,
+                keywordList: this.setKeywordList(pList)
+            })
+        });
+    }
+
+    componentWillUnmount() {
+        this.dao.off();
     }
     
 
