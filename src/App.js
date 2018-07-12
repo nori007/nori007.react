@@ -38,10 +38,14 @@ class App extends Component {
     }
 
     setKeyword(target) {
-        return this.setState({
-            projectList: this.getTargetProjectList(target),
-            keywordList: [target]
-        });
+        if(target === 'all') {
+            this.componentWillMount();
+        }else {
+            return this.setState({
+                projectList: this.getTargetProjectList(target),
+                keywordList: ['all', target]
+            });
+        }
     }
 
     setKeywordList(itemList) {
