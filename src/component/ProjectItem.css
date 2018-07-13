@@ -14,6 +14,7 @@
 }
 
 .projectItem_date {
+    margin-top: 20px;
     display: inline;
     right: 100px;
     position: absolute;
@@ -23,17 +24,39 @@
 
 }
 .projectItem_info {
-    height: 30px;
+    display: inline;
 }
 
 .projectItem_skill {
-    height: 30px;
+    display: inline;
 }
 
 .projectItem_text {
-    height: 30px;
+    display: inline;
+}
+
+.projectItem_text_top {
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
+.projectItem_text_p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
 }
 
 .projectItem_etc {
-    height: 30px;
+    display: inline;
+    padding-left: 10px;
+}
+
+.common_title {
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+.common_content {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
 }

@@ -9,7 +9,7 @@ export default class ProjectItem extends Component {
                 <div className='projectItem'>
                     <div className='projectItem_top'>
                         <div className='projectItem_name'>
-                            <p>{item.name}</p>
+                            <h1>{item.name}</h1>
                         </div>
                         <div className='projectItem_date'>
                             <p>{item.date}</p>
@@ -17,18 +17,22 @@ export default class ProjectItem extends Component {
                     </div>
                     {/* <div className='projectItem_content'> */}
                         <div className='projectItem_info'>
-                            <p>{item.info}</p>
+                            <h3 className='common_title'>내용</h3>
+                            <p className='common_content'>{item.info}</p>
                         </div>
                         <div className='projectItem_skill'>
-                            <p>{item.skill}</p>
+                            <h3 className='common_title'>사용 기술</h3>
+                            <p className='common_content'>{item.skill}</p>
                         </div>
                         <div className='projectItem_text'>
-                            <p>{item.text}</p>
+                            <h3 className='common_title'>담당 업무</h3>
+                            {item.text.map((txt, index) => {
+                                return <p key={index} className='projectItem_text_p'> - {txt}</p>
+                            })}
                         </div>
-                        <div className='projectItem_etc'>
+                        {/* <div className='projectItem_etc'>
                             <p>{item.etc}</p>
-                        </div>
-                    {/* </div> */}
+                        </div> */}
                 </div>
             )
         }else {
