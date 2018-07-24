@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import SimpleInfo from './component/SimpleInfo'
 import ProjectList from './component/ProjectList'
-import Item from './component/item'
 import FireBaseDAO from './component/FireBaseDAO'
 import KeywordList from './component/KeywordList'
 

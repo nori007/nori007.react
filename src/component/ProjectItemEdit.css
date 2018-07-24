@@ -1,64 +1,64 @@
-.projectItem {
+.projectItemEdit {
     margin: 5px;
     border: 1px solid;
     padding: 15px;
 }
 
-.projectItem_top {
+.projectItemEdit_top {
     display: flex;
     vertical-align: middle;
 }
 
-.projectItem_name {
+.projectItemEdit_name {
     display: inline;
 }
 
-.projectItem_date {
+.projectItemEdit_date {
     display: inline;
 }
-.projectItem_date p {
+.projectItemEdit_date p {
     margin-top: -15px;
 }
 
-.projectItem_info {
+.projectItemEdit_info {
     display: inline;
 }
 
-.projectItem_skill {
+.projectItemEdit_skill {
     display: inline;
 }
 
-.projectItem_text {
+.projectItemEdit_text {
     display: inline;
 }
 
-.projectItem_text_top {
+.projectItemEdit_text_top {
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
-.projectItem_text_p {
+.projectItemEdit_text_p {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
-.projectItem_etc {
+.projectItemEdit_etc {
     display: inline;
     padding-left: 10px;
 }
 
-.common_title {
+.projectItemEdit_common_title {
     margin-bottom: 0px;
     padding-left: 10px;
 }
-.common_content {
+.projectItemEdit_common_content {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
-.common_text {
+.projectItemEdit_common_text {
     border: none;
     width: 100%;
     font-size: 15px;
@@ -66,16 +66,16 @@
     text-shadow: 0 0 0 #000;   
 }
 
-.common_text_tite {
+.projectItemEdit_common_text_tite {
     font-size: 35px;
     font-weight: 700;
 }
 
-.project_bottom {
+.projectItemEdit_project_bottom {
     text-align: center;
 }
 
-.project_bottom_button {
+.projectItemEdit_bottom_button {
     width: 100px;
     height: 30px;
     margin: 5px;
