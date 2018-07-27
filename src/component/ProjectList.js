@@ -8,12 +8,12 @@ export default class ProjectList extends Component {
     constructor (props) {
         super(props);
         this.login = true;
-        this.createProject = this.createProject.bind(this);
+        this.loadProjectItem = this.loadProjectItem.bind(this);
         this.createEditMenu = this.createEditMenu.bind(this);
-        
+        this.createProjectItem = this.createProjectItem.bind(this);
     }
 
-    createProject(item, index) {
+    loadProjectItem(item, index) {
         // return (
         //     <div className='projectList_row' key={index}>
         //         <ProjectItem project={item}/>
@@ -22,7 +22,7 @@ export default class ProjectList extends Component {
 
         return (
             <div className='projectList_row' key={index}>
-                <ProjectItemEdit project={item}/>
+                <ProjectItemEdit project={item} number={index}/>
             </div>
         )
     }
@@ -30,10 +30,14 @@ export default class ProjectList extends Component {
     createEditMenu() {
         return (
             <div className='projectList_edit'>
-                <button className='projectList_edit_button'>추가</button>
+                <button className='projectList_edit_button' onClick={this.createProjectItem}>추가</button>
                 <button className='projectList_edit_button'>전체 삭제</button>                
             </div>
         )
+    }
+
+    createProjectItem() {
+        console.log('createProjectItem');
     }
 
     render() {
@@ -41,7 +45,7 @@ export default class ProjectList extends Component {
             return (
                 <div className='projectList'>
                     {this.createEditMenu()}
-                    {this.props.projectList.map(this.createProject)}
+                    {this.props.projectList.map(this.loadProjectItem)}
                 </div>
             )
         }else {
